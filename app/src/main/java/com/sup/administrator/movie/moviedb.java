@@ -2,6 +2,7 @@ package com.sup.administrator.movie;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -37,7 +38,7 @@ public class moviedb extends SQLiteOpenHelper {
         onCreate(sqLiteDatabase);
 
     }
-    public boolean insert(String name,String actr,String actrs,String dir,String pro,String cm,String ry,String tc) {
+    public boolean insert(String name,String actr,String actrs,String ry,String dir,String pro,String cm,String tc) {
         SQLiteDatabase sqLiteDatabase=this.getWritableDatabase();
         ContentValues cv=new ContentValues();
 
@@ -58,5 +59,10 @@ public class moviedb extends SQLiteOpenHelper {
         {
             return true;
         }
+    }
+    public Cursor search(String name){
+        SQLiteDatabase sq=this.getWritableDatabase();
+        Cursor cur=sq.rawQuery("SELECT * FROM "+tablename+" WHERE "+col2+"='"+name+"'",null);
+        return cur;
     }
 }

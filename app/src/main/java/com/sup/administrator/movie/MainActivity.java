@@ -1,5 +1,6 @@
 package com.sup.administrator.movie;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,7 +11,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 EditText e1,e2,e3,e4,e5,e6,e7,e8;
-    Button b;
+    Button b,b1;
     String s1,s2,s3,s4,s5,s6,s7,s8;
     moviedb mo;
     @Override
@@ -26,6 +27,14 @@ EditText e1,e2,e3,e4,e5,e6,e7,e8;
         e7=(EditText)findViewById(R.id.cm);
         e8=(EditText)findViewById(R.id.tc);
        b=(Button) findViewById(R.id.reg);
+        b1=(Button) findViewById(R.id.search);
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(getApplicationContext(),movie.class);
+                startActivity(i);
+            }
+        });
         mo=new moviedb(this);
         mo.getWritableDatabase();
         b.setOnClickListener(new View.OnClickListener() {
