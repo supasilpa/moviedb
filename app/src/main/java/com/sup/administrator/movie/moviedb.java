@@ -65,4 +65,39 @@ public class moviedb extends SQLiteOpenHelper {
         Cursor cur=sq.rawQuery("SELECT * FROM "+tablename+" WHERE "+col2+"='"+name+"'",null);
         return cur;
     }
+    public boolean update(String id,String act,String acts,String ry,String dir,String pro,String cam,String tc )
+    {
+        SQLiteDatabase sq=this.getWritableDatabase();
+        ContentValues contentValues=new ContentValues();
+        contentValues.put(col3,act);
+        contentValues.put(col4,acts);
+        contentValues.put(col5,ry);
+        contentValues.put(col6,dir);
+        contentValues.put(col7,pro);
+        contentValues.put(col8,cam);
+        contentValues.put(col9,tc);
+        long status=sq.update(tablename,contentValues,col1 + "=" +id,null);
+        if(status==-1)
+        {
+            return  false;
+
+        }
+        else {
+            return  true;
+        }
+    }
+    public boolean delete(String id)
+    {
+        SQLiteDatabase sq= this.getWritableDatabase();
+        long status=sq.delete(tablename,col1+"="+id,null);
+        if(status==-1)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+
+        }
+    }
 }

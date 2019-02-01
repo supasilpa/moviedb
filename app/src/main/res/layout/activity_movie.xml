@@ -28,7 +28,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/a1"
-        android:editable="false"
         android:visibility="gone"
         />
     <TextView
@@ -41,7 +40,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/a2"
-        android:editable="false"
         android:visibility="gone"
         />
     <TextView
@@ -54,7 +52,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/a3"
-        android:editable="false"
         android:visibility="gone"
         />
     <TextView
@@ -67,7 +64,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/a4"
-        android:editable="false"
         android:visibility="gone"
         />
     <TextView
@@ -80,7 +76,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/a5"
-        android:editable="false"
         android:visibility="gone"
         />
     <TextView
@@ -93,7 +88,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/a6"
-        android:editable="false"
         android:visibility="gone"
         />
     <TextView
@@ -106,9 +100,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/a7"
-        android:editable="false"
         android:visibility="gone"
         />
+    <Button
+          android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/update"
+        android:text="Update"/>
+    <Button
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/delete"
+        android:text="delete"/>
 
 </LinearLayout>
 </ScrollView>
